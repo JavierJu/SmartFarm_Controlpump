@@ -4,14 +4,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Relay Control</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-
+    <header>
+        <h1>Water Pump Control Panel</h1>
+    </header>
+    <main>
+        <section>
+            <h2 id="relayStatus">Current Relay Status: Loading...</h2>
+        </section>
+        <article>
+            <div class="controlButton">
+                <button onclick="controlRelay('ON')">Turn ON Relay</button>
+                <button onclick="controlRelay('OFF')">Turn OFF Relay</button>
+            </div>
+        </article>
+    </main>
+    <script src="script.js"></script>
 </body>
 
 </html>
 
 <!-- http://13.208.254.200/Controlpump/pump_control.php?command=ON -->
 <!-- http://13.208.254.200/Controlpump/pump_control.php?command=OFF -->
+
+<!-- <button onclick="location.href='http://13.208.254.200/Controlpump/pump_control.php?command=ON'">Turn ON Relay</button>
+  <button onclick="location.href='http://13.208.254.200/Controlpump/pump_control.php?command=OFF'">Turn OFF Relay</button> -->
