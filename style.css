@@ -1,0 +1,35 @@
+body {
+    background: linear-gradient(to right, slateblue, lightblue);
+    font-family: 'Trebuchet MS';
+    color: white;
+    text-align: center;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+}
+
+.RelayTurnOnOff {
+    font-weight: bold;
+    width: 200px;
+    background-color: white;
+    font-size: 20px;
+    border-radius: 10px;
+    padding: 10px;
+    display: block;
+    text-align: center;
+    margin: 5px;
+    color: slateblue;
+    text-decoration: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.5s ease;
+    cursor: pointer;
+    float: left;
+}
+
+.RelayTurnOnOff:hover {
+    color: white;
+    background-color: slateblue;
+    transform: scale(1.05);
+}
