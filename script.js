@@ -6,10 +6,38 @@ function controlRelay(command) {
         .then(data => {
             alert(`Relay command ${command} executed. Server response: ${data}`);
             updateRelayStatus(command);  // 명령 후 상태 표시 업데이트
+
+            if (command === 'ON') {
+                startTimer(); // ON 버튼을 누르면 타이머 시작
+            } else {
+                stopTimer();  // OFF 버튼을 누르면 타이머 종료
+            }
+
         })
         .catch(error => {
             alert("Error executing command: " + error);
         });
+}
+
+// 타이머 시작 함수
+function startTimer() {
+    seconds = 0; // 초기화
+    updateTimerDisplay();
+    timer = setInterval(() => {
+        seconds++;
+        updateTimerDisplay();
+    }, 1000); // 1초마다 업데이트
+}
+
+// 타이머 종료 함수
+function stopTimer() {
+    clearInterval(timer); // 타이머 중지
+    document.getElementById("timerDisplay").innerText = "Timer: Stopped"; // 타이머 종료 메시지
+}
+
+// 타이머 표시 업데이트
+function updateTimerDisplay() {
+    document.getElementById("timerDisplay").innerText = `Timer: ${seconds} seconds`;
 }
 
 function updateRelayStatus(status) {
